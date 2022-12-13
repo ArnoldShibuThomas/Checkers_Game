@@ -1,0 +1,22 @@
+plugins {
+    id "com.github.spotbugs" version "5.0.12"
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+apply plugin: 'application'
+
+mainClassName = 'ui.CheckersGUI'
+
+// Repositories and dependencies for code go here
+repositories {
+  mavenCentral()
+}
+
+run {
+    standardInput = System.in
+}
+
+javafx {
+    version = "19"
+    modules = ['javafx.controls', 'javafx.graphics' , 'javafx.fxml']
+}

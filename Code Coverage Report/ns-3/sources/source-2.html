@@ -1,0 +1,255 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > CheckersTextConsole</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">ui</a>
+</div>
+
+<h1>Coverage Summary for Class: CheckersTextConsole (ui)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CheckersTextConsole</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/85)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/** This class implements the console interface the user interacts with in the checkers game and contains the main
+<i class="no-highlight">2</i>&nbsp; *
+<i class="no-highlight">3</i>&nbsp; * @author Arnold Shibu
+<i class="no-highlight">4</i>&nbsp; * @verison 2.0 Nov 2, 2021.
+<i class="no-highlight">5</i>&nbsp; */
+<i class="no-highlight">6</i>&nbsp;package ui;
+<i class="no-highlight">7</i>&nbsp;import core.*;
+<i class="no-highlight">8</i>&nbsp;import java.util.*;
+<b class="nc"><i class="no-highlight">9</i>&nbsp;public class CheckersTextConsole {</b>
+<i class="no-highlight">10</i>&nbsp;    /** The main method of the program and displays the text base UI
+<i class="no-highlight">11</i>&nbsp;     *
+<i class="no-highlight">12</i>&nbsp;     * @parm an array of Strings
+<i class="no-highlight">13</i>&nbsp;     * @return void
+<i class="no-highlight">14</i>&nbsp;     */
+<i class="no-highlight">15</i>&nbsp;    public static void main (String[] args){
+<i class="no-highlight">16</i>&nbsp;
+<b class="nc"><i class="no-highlight">17</i>&nbsp;        boolean status = false;</b>
+<b class="nc"><i class="no-highlight">18</i>&nbsp;        String move = &quot;&quot;;</b>
+<b class="nc"><i class="no-highlight">19</i>&nbsp;        boolean valid = false;</b>
+<b class="nc"><i class="no-highlight">20</i>&nbsp;        int black = 1;</b>
+<b class="nc"><i class="no-highlight">21</i>&nbsp;        int white = 0;</b>
+<b class="nc"><i class="no-highlight">22</i>&nbsp;        int current = 1;</b>
+<b class="nc"><i class="no-highlight">23</i>&nbsp;        boolean start = true;</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;        CheckersLogic board = new CheckersLogic();</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        boolean computer = false;</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;        System.out.println(board.toString());</b>
+<b class="nc"><i class="no-highlight">27</i>&nbsp;        CheckersComputerPlayer JohnDoe = new CheckersComputerPlayer(board);</b>
+<i class="no-highlight">28</i>&nbsp;
+<b class="nc"><i class="no-highlight">29</i>&nbsp;        while (status == false){</b>
+<i class="no-highlight">30</i>&nbsp;
+<b class="nc"><i class="no-highlight">31</i>&nbsp;            if (start == true) {</b>
+<i class="no-highlight">32</i>&nbsp;
+<b class="nc"><i class="no-highlight">33</i>&nbsp;                start = false;</b>
+<b class="nc"><i class="no-highlight">34</i>&nbsp;                Scanner choice = new Scanner(System.in);</b>
+<b class="nc"><i class="no-highlight">35</i>&nbsp;                String whatToDo = &quot;&quot;;</b>
+<b class="nc"><i class="no-highlight">36</i>&nbsp;                while(!(whatToDo.equals(&quot;P&quot;)) || !(whatToDo.equals(&quot;C&quot;))){</b>
+<b class="nc"><i class="no-highlight">37</i>&nbsp;                    System.out.println(&quot;Begin Game. Enter &#39;P&#39; if you want to play against another player; enter &#39;C&#39; to play against computer. &quot;);</b>
+<b class="nc"><i class="no-highlight">38</i>&nbsp;                    whatToDo = choice.nextLine();</b>
+<i class="no-highlight">39</i>&nbsp;
+<b class="nc"><i class="no-highlight">40</i>&nbsp;                    if(whatToDo.equals(&quot;C&quot;)){</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;                        computer = true;</b>
+<b class="nc"><i class="no-highlight">42</i>&nbsp;                        System.out.println(board.toString());</b>
+<b class="nc"><i class="no-highlight">43</i>&nbsp;                        break;</b>
+<i class="no-highlight">44</i>&nbsp;
+<i class="no-highlight">45</i>&nbsp;                    }
+<b class="nc"><i class="no-highlight">46</i>&nbsp;                    if(whatToDo.equals(&quot;P&quot;)){</b>
+<b class="nc"><i class="no-highlight">47</i>&nbsp;                        computer = false;</b>
+<b class="nc"><i class="no-highlight">48</i>&nbsp;                        System.out.println(board.toString());</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;                        break;</b>
+<i class="no-highlight">50</i>&nbsp;
+<i class="no-highlight">51</i>&nbsp;                    }
+<i class="no-highlight">52</i>&nbsp;                }
+<i class="no-highlight">53</i>&nbsp;
+<b class="nc"><i class="no-highlight">54</i>&nbsp;            } else {</b>
+<b class="nc"><i class="no-highlight">55</i>&nbsp;                System.out.println(board.toString());</b>
+<i class="no-highlight">56</i>&nbsp;            }
+<i class="no-highlight">57</i>&nbsp;
+<b class="nc"><i class="no-highlight">58</i>&nbsp;            if(computer == false) {</b>
+<b class="nc"><i class="no-highlight">59</i>&nbsp;                if (current == black) {</b>
+<b class="nc"><i class="no-highlight">60</i>&nbsp;                    System.out.println(&quot;PlayerX - your turn.&quot;);</b>
+<b class="nc"><i class="no-highlight">61</i>&nbsp;                    System.out.println(&quot;Choose a cell position of piece to be moved and the new position. e.g., 3a-4b&quot;);</b>
+<b class="nc"><i class="no-highlight">62</i>&nbsp;                    Scanner input = new Scanner(System.in);</b>
+<b class="nc"><i class="no-highlight">63</i>&nbsp;                    move = input.nextLine();</b>
+<i class="no-highlight">64</i>&nbsp;
+<b class="nc"><i class="no-highlight">65</i>&nbsp;                } else {</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;                    System.out.println(&quot;PlayerO - your turn.&quot;);</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;                    System.out.println(&quot;Choose a cell position of piece to be moved and the new position. e.g., 3a-4b&quot;);</b>
+<b class="nc"><i class="no-highlight">68</i>&nbsp;                    Scanner input = new Scanner(System.in);</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;                    move = input.nextLine();</b>
+<i class="no-highlight">70</i>&nbsp;                }
+<i class="no-highlight">71</i>&nbsp;
+<i class="no-highlight">72</i>&nbsp;                //check if move is valid
+<b class="nc"><i class="no-highlight">73</i>&nbsp;                if (board.isValid(move, current) == true) {</b>
+<i class="no-highlight">74</i>&nbsp;                    //check and store status
+<b class="nc"><i class="no-highlight">75</i>&nbsp;                    if (current == black) {</b>
+<b class="nc"><i class="no-highlight">76</i>&nbsp;                        current = white;</b>
+<i class="no-highlight">77</i>&nbsp;                    } else {
+<b class="nc"><i class="no-highlight">78</i>&nbsp;                        current = black;</b>
+<i class="no-highlight">79</i>&nbsp;                    }
+<i class="no-highlight">80</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">81</i>&nbsp;                    current = black;</b>
+<i class="no-highlight">82</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">83</i>&nbsp;                boolean xWin=board.gameStatus(black);</b>
+<b class="nc"><i class="no-highlight">84</i>&nbsp;                boolean oWin= board.gameStatus(white);</b>
+<i class="no-highlight">85</i>&nbsp;                //checks win
+<b class="nc"><i class="no-highlight">86</i>&nbsp;                if (xWin == true &amp;&amp; oWin == true) {</b>
+<b class="nc"><i class="no-highlight">87</i>&nbsp;                    System.out.println(&quot;Tie!&quot;);</b>
+<b class="nc"><i class="no-highlight">88</i>&nbsp;                    status = true;</b>
+<i class="no-highlight">89</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">90</i>&nbsp;                else if (xWin == true) {</b>
+<b class="nc"><i class="no-highlight">91</i>&nbsp;                    System.out.println(&quot;Player X won the game!&quot;);</b>
+<b class="nc"><i class="no-highlight">92</i>&nbsp;                    status = true;</b>
+<i class="no-highlight">93</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">94</i>&nbsp;                else if(oWin == true){</b>
+<b class="nc"><i class="no-highlight">95</i>&nbsp;                    System.out.println(&quot;Player O won the game!&quot;);</b>
+<b class="nc"><i class="no-highlight">96</i>&nbsp;                    status = true;</b>
+<i class="no-highlight">97</i>&nbsp;                }
+<i class="no-highlight">98</i>&nbsp;                else{
+<b class="nc"><i class="no-highlight">99</i>&nbsp;                    status = status;</b>
+<i class="no-highlight">100</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">101</i>&nbsp;            }</b>
+<i class="no-highlight">102</i>&nbsp;            else{
+<b class="nc"><i class="no-highlight">103</i>&nbsp;                if (current == black) {</b>
+<b class="nc"><i class="no-highlight">104</i>&nbsp;                    System.out.println(&quot;PlayerX - your turn.&quot;);</b>
+<b class="nc"><i class="no-highlight">105</i>&nbsp;                    System.out.println(&quot;Choose a cell position of piece to be moved and the new position. e.g., 3a-4b&quot;);</b>
+<b class="nc"><i class="no-highlight">106</i>&nbsp;                    Scanner input = new Scanner(System.in);</b>
+<b class="nc"><i class="no-highlight">107</i>&nbsp;                    move = input.nextLine();</b>
+<i class="no-highlight">108</i>&nbsp;                    //validate user&#39;s move
+<b class="nc"><i class="no-highlight">109</i>&nbsp;                    if (board.isValid(move, current) == true) {</b>
+<i class="no-highlight">110</i>&nbsp;                        //check and store status
+<b class="nc"><i class="no-highlight">111</i>&nbsp;                        if (current == black) {</b>
+<b class="nc"><i class="no-highlight">112</i>&nbsp;                            current = white;</b>
+<i class="no-highlight">113</i>&nbsp;                        } else {
+<b class="nc"><i class="no-highlight">114</i>&nbsp;                            current = black;</b>
+<i class="no-highlight">115</i>&nbsp;                        }
+<i class="no-highlight">116</i>&nbsp;                    } else {
+<b class="nc"><i class="no-highlight">117</i>&nbsp;                        current = black;</b>
+<i class="no-highlight">118</i>&nbsp;                    }
+<i class="no-highlight">119</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">120</i>&nbsp;                if(current == white){</b>
+<b class="nc"><i class="no-highlight">121</i>&nbsp;                    if(JohnDoe.move() == true) {</b>
+<b class="nc"><i class="no-highlight">122</i>&nbsp;                        current = black;</b>
+<i class="no-highlight">123</i>&nbsp;                    }
+<i class="no-highlight">124</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">125</i>&nbsp;                boolean xWin=board.gameStatus(black);</b>
+<b class="nc"><i class="no-highlight">126</i>&nbsp;                boolean oWin= board.gameStatus(white);</b>
+<i class="no-highlight">127</i>&nbsp;                //checks win
+<b class="nc"><i class="no-highlight">128</i>&nbsp;                if (xWin == true &amp;&amp; oWin == true) {</b>
+<b class="nc"><i class="no-highlight">129</i>&nbsp;                    System.out.println(&quot;Tie!&quot;);</b>
+<b class="nc"><i class="no-highlight">130</i>&nbsp;                    status = true;</b>
+<i class="no-highlight">131</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">132</i>&nbsp;                else if (xWin == true) {</b>
+<b class="nc"><i class="no-highlight">133</i>&nbsp;                    System.out.println(&quot;Player X won the game!&quot;);</b>
+<b class="nc"><i class="no-highlight">134</i>&nbsp;                    status = true;</b>
+<i class="no-highlight">135</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">136</i>&nbsp;                else if(oWin == true){</b>
+<b class="nc"><i class="no-highlight">137</i>&nbsp;                    System.out.println(&quot;Player O won the game!&quot;);</b>
+<b class="nc"><i class="no-highlight">138</i>&nbsp;                    status = true;</b>
+<i class="no-highlight">139</i>&nbsp;                }
+<i class="no-highlight">140</i>&nbsp;                else{
+<b class="nc"><i class="no-highlight">141</i>&nbsp;                    status = status;</b>
+<i class="no-highlight">142</i>&nbsp;                }
+<i class="no-highlight">143</i>&nbsp;
+<b class="nc"><i class="no-highlight">144</i>&nbsp;            }</b>
+<i class="no-highlight">145</i>&nbsp;
+<i class="no-highlight">146</i>&nbsp;        }
+<i class="no-highlight">147</i>&nbsp;
+<i class="no-highlight">148</i>&nbsp;    }
+<i class="no-highlight">149</i>&nbsp;
+<i class="no-highlight">150</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-11-23 11:08</div>
+</div>
+</body>
+</html>
